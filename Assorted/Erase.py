@@ -1,9 +1,11 @@
+##Erase function for users without Spatial Analyst License
+##The extent of EraseFC is deleted from the TargetFC. The output is saved to a FC (outputname) in the workspace.
 #Modules
 import arcpy
 from arcpy import env
 
 #Environment
-env.workspace = "G:\Users\Jordan\Projects\FH_2015Submission\Submission.gdb\Submission"
+env.workspace = "WORKSPACE_PATH"
 
 ###Function###
 def erase(TargetFC, EraseFC, outputname):
@@ -13,9 +15,9 @@ def erase(TargetFC, EraseFC, outputname):
     arcpy.DeleteFeatures_management("outputnamelayer")
 
 #Variables
-TargetFC = "G:\Users\Jordan\Projects\FH_2015Submission\Submission.gdb\Submission\SurfaceSoilErase_v01_20151216_JV"
-EraseFC = "G:\Users\Jordan\Projects\FH_2015Submission\Submission.gdb\Submission\OilSandsLandCover_RevG_Reclaimed_v01_20151216_JV"
-outputname = "SurfaceSoil_DisturbancePlacement_Erase_v01_20151216_JV"
+TargetFC = "TARGET_FC"
+EraseFC = "ERASE_FC"
+outputname = "OUTPUT_NAME"
 
 #Script
 erase(TargetFC, EraseFC, outputname)
